@@ -1,6 +1,6 @@
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
 
@@ -22,7 +22,9 @@ body {
     color: var(--clr-dark)
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1;
 }
 
@@ -92,25 +94,24 @@ header {
 @media (min-width: 500px) {
     .main {
         display: grid;
-        grid-template-columns: 
-            minmax(1em, 1fr) 
-            minmax(20rem, 50ch) 
-            minmax(1em, 3fr);
+        grid-template-columns:
+            minmax(1em, 1fr) minmax(20rem, 50ch) minmax(1em, 3fr);
         justify-items: start;
     }
-    .main > * {
+
+    .main>* {
         grid-column: 1 / 3;
     }
 
 }
 
 @media (min-witdh: 1200px) {
-    .main__logo {
+    .main--logo {
         background-position: bottom center;
     }
 }
 
-.main__logo {
+.main--logo {
     /* https://unsplash.com/photos/LmyPLbbUWhA */
     background-image: url(../images/home.jpg);
     background-size: cover;
@@ -133,4 +134,107 @@ header {
     text-shadow: var(--clr-dark) 2px 2px 10px;
     padding: 0 5rem 1rem;
     overflow-wrap: break-word;
+}
+
+.services__column {
+    float: left;
+    width: 33%;
+    padding: 2em;
+}
+
+.services__row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.services {
+    padding: 2em;
+    background-color: #8fbe92;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 950px) {
+    .services__column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .contact__column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.reviews {
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+.reviews__statements {
+    padding-bottom: 1rem;
+}
+
+.vertical__line {
+    width: 200px;
+    height: 1px;
+    background-color: #395144;
+}
+
+.contact {
+    background-color: #8fbe92;
+    padding: 1rem;
+}
+
+.contact__container {
+    margin: auto;
+}
+
+.contact__style {
+    margin: auto;
+}
+
+.contact--picture {
+    display: block;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact--title {
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFF;
+}
+
+.contact__column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.contact__row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
